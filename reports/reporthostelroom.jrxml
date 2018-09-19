@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporthostelroom" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fa4f3894-f77b-4312-b607-087da89fadd5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1"/>
+	<parameter name="hostel" class="java.lang.String"/>
+	<parameter name="room" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     student_details.`regno` AS regno,
+     student_details.`firstname` AS firstname,
+     student_details.`othernames` AS othernames,
+     student_details.`email` AS email,
+     student_details.`phone` AS phone,
+     student_details.`gender` AS gender,
+     student_details.`state` AS state,
+     student_details.`lga` AS lga
+FROM
+     `student_details` student_details
+WHERE
+     hostel = $P{hostel}
+ AND room = $P{room}]]>
+	</queryString>
+	<field name="regno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="firstname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="othernames" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="phone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gender" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="state" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lga" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image scaleImage="RealHeight">
+				<reportElement x="450" y="5" width="105" height="74" uuid="444aa9f6-36fc-4ad7-bd49-3a4ab3dc30a8"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\Documents\\Photoshop\\NMTI CREST_cut.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="186" y="25" width="154" height="54" uuid="b76a4bd7-5857-4865-913c-118137f1b6d3"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[OCCUPANTS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="134" y="20" width="96" height="20" uuid="cba4ed88-7f7f-4e63-a0e6-b3b377aa95ca"/>
+				<text><![CDATA[Students resident in ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="230" y="22" width="57" height="18" uuid="9c830735-cec8-4bed-8e79-27e07f104250"/>
+				<textFieldExpression><![CDATA[$P{hostel}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="287" y="20" width="23" height="20" uuid="d984b540-6e12-4127-b695-f0bae8a18e75"/>
+				<text><![CDATA[and]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="310" y="21" width="100" height="20" uuid="98b6ed24-2c41-4197-857a-af5706bdd089"/>
+				<textFieldExpression><![CDATA[$P{room}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="0" y="20" width="100" height="20" uuid="9e450e5a-4d49-41d8-94b1-4b4a497214b2"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="56" height="20" uuid="08019645-973b-4ca1-b8b9-9a8a8e421a74"/>
+				<text><![CDATA[Regno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="56" y="41" width="68" height="20" uuid="210a5e4f-1b9c-4a58-a9b8-b5d4ce3a8f74"/>
+				<text><![CDATA[Firstname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="39" width="84" height="20" uuid="a1f1ac0f-dcc6-4711-90b3-dc0d32758886"/>
+				<text><![CDATA[Othernames]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="208" y="41" width="79" height="20" uuid="1e41c607-791e-4ed4-8dbd-c30d88981774"/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="41" width="76" height="20" uuid="5d25c1f8-76c7-41da-bd2c-2b63d762ecfd"/>
+				<text><![CDATA[Phone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="363" y="41" width="40" height="20" uuid="a5ae2848-44df-4f22-8844-34f6afe0dc36"/>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="41" width="71" height="20" uuid="cecd74a3-d2a1-459d-85ab-bf2be078ce9b"/>
+				<text><![CDATA[State]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="474" y="41" width="81" height="20" uuid="82ac0927-c26c-490f-a2ae-33b4b7106686"/>
+				<text><![CDATA[LGA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="13" width="56" height="21" uuid="7dfbb1ea-cb75-4e83-8c86-37d82947913e"/>
+				<textFieldExpression><![CDATA[$F{regno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="56" y="13" width="68" height="21" uuid="3c7ae4fb-4f09-4a2d-93df-c2b4c911b67f"/>
+				<textFieldExpression><![CDATA[$F{firstname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="13" width="84" height="22" uuid="143b5e97-03c4-4168-baf6-12175452563c"/>
+				<textFieldExpression><![CDATA[$F{othernames}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="208" y="13" width="79" height="21" uuid="a8be820f-a221-4ef5-877d-58e53c0a9175"/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="13" width="76" height="20" uuid="523cc0c8-337a-4b54-b2e2-909d93c9c272"/>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="13" width="40" height="20" uuid="d90cb7ba-309f-48db-86d8-a477d3ff84ea"/>
+				<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="403" y="13" width="71" height="20" uuid="f7222777-579b-438b-8248-678a173ce9a8"/>
+				<textFieldExpression><![CDATA[$F{state}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="15" width="81" height="20" uuid="07e91823-e519-433a-8761-98f2144b84f6"/>
+				<textFieldExpression><![CDATA[$F{lga}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
